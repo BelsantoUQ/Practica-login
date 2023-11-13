@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+
+        <!--Estilos CSS-->
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+
+        <!--JQUERY-->
+        <script type="text/javascript" src="jquery/jquery-3.6.3.min.js"></script>
+
+        <!--Script JS-->
+        <script type="text/javascript" src="js/login.js"></script>
+    </head>
+
+    <body>
+        <div id="login">
+            <div id="principal">
+                <h1 id="titulo">Iniciar Sesión</h1>
+                <form form action="" method="POST" id="form_login">
+
+                    <label for="Usuario">Usuario</label>
+                    <input id="usuario" type="text" name="Usuario" placeholder="Ingrese el Usuario">
+        
+                    <label for="Contraseña">Contraseña</label>
+                    <input id="clave" type="password" name="Contraseña" placeholder="Ingrese la Contraseña">
+                    <br>
+                    <br>
+                    <button type="submit" id="boton">Ingresar</button>
+                </form>
+                <br>
+                <div id="link">
+                    <a href="index.html">Olvidaste la Contraseña</a>
+                    <br>
+                    <a href="index.html">Regístrate</a>
+                    <br/>
+                    <div id="results"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </body>
+</html>
