@@ -90,7 +90,9 @@ footer .contenedor{
     justify-content: center;
     padding: 3% 0;
 }
-
+footer .contenedor p{
+    margin-bottom: 5px;
+}
 
 .copy {
     font-size: 20px;
@@ -108,11 +110,27 @@ footer .contenedor{
 }
 
 
+nav ul{
+    margin: 10px 15px;
+}
+
+nav ul li{
+    list-style: none;
+    width: 5%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+a{
+    text-decoration: none;
+    color: #069aac;
+    border: solid 0.5px #75d45d;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+
 @media (min-width:1024px){
     .contenedor{
         width: 999px;
     }
 }
-
-
-

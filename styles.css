@@ -5,7 +5,7 @@
 body {
     background-color: #000;
     color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +23,9 @@ body {
     font-size: 4em;
     margin: 0;
     margin-top: 2%;
+}
+.user{
+    font-size: 2.3em;
 }
 .container {
     width: 40%;
@@ -91,4 +94,57 @@ form{
     place-content: center;
     align-items: center;
 
+}
+
+header{
+    width: 100%;
+    height: 50px;
+    background: #333;
+    color: #fff;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul{
+    margin: 15px;
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+    width: 10%;
+    border-radius: 5px;
+    border: solid 0.5px #75d45d;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0 5px;
+}
+
+nav ul .close{
+    margin-left: auto;
+}
+
+a{
+    text-decoration: none;
+    color: #75d45d;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+p a{
+    border: solid 0.5px #069aac;
+}
+
+section{
+    margin-top: 3%;
+    font-size: 1.3em;
+    border: 1px solid whitesmoke;width: 70%;
+    height: 20%;background-color: rgb(0 0 0 / 26%);
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 5%;
+    box-shadow: rgb(67 120 167 / 40%) -5px 5px, rgb(50 131 157 / 30%) -10px 10px, rgb(53 127 179 / 20%) -15px 15px, rgb(171 58 130 / 10%) -20px 20px, rgb(69 46 240 / 5%) -25px 25px;
 }

@@ -3,7 +3,7 @@
     <head>
         <meta charset= "UTF-8">
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title> INICIO PRUEBAS </title>
+        <title> Log in </title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel="stylesheet" href="cssInicio/estilosRegistro.css">
         <link rel="stylesheet" href="cssInicio/estilos.css">
@@ -11,7 +11,11 @@
 
 <header>
     <nav>
-
+        <ul>
+            <li>
+                <a href="index.html">INICIO</a>
+            </li>
+        </ul>
     </nav>
     <?php session_start(); ?>
 </header>
@@ -19,7 +23,6 @@
     background-image: linear-gradient(to bottom,rgb(0 255 149 / 50%),rgba(0, 0, 255, 0.5)), url(https://www.uniquindio.edu.co/programas/publicaciones/271/ingenieria-de-sistemas-y-computacion/info/uniquindio/media/pub271.jpg);
     height: 100vh;
     overflow: hidden;
-    
 ">
 
     <form  class="formulario" action="validar.php" method="post">
@@ -48,5 +51,13 @@
         </div>
     </div>
     </footer>
+    <?php
+        if (isset($_SESSION['openSesion'])) {
+            if(($_SESSION['openSesion'])>=1){
+            echo"<script type=\"text/javascript\">alert('Ya iniciaste sesion ;)'); window.location='productos.php';</script>";
+            }
+        }
+
+    ?>
 </body>
 </html>

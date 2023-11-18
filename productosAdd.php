@@ -8,8 +8,24 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">INICIO</a>
+                </li>
+                <li>
+                    <a href="productos.php">PRODUCTOS</a>
+                </li>
+                <li class="close">
+                    <a href="cerrar.php">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+        <?php session_start(); ?>
+    </header>
+    <section>
     <?php
-        session_start();
         $name = "USUARIO";
         $cedula = "";
 
@@ -22,7 +38,7 @@
 
             echo'
                 <div>
-                    <h1  href="">'.' '.$name.'</h1>
+                    <h1  class="tittle user">'.' '.$name.'</h1>
                 </div>
             ';
             }else{
@@ -34,7 +50,7 @@
 
     ?>
 
-    <div><h1 class="tittle"> Universidad del Quindío</h1></div>
+    <h1 class="tittle"> Universidad del Quindío</h1></section>
     <div class="container">
         <h1>Agregar productos al inventario</h1>
         <form id="productForm"  action="agregarProducto.php" method="post">
@@ -61,12 +77,10 @@
             <label for="quantity">Cantidad a Ingresar:</label>
             <input type="number" id="quantity" name="quantity" min="1" max="100" required /><br><br>
 
-            <input type="submit" class="add" value="Enviar">
-            <input type="button" class="search" value="Buscar">
-            <input type="button" class="edit" value="Editar">
-            <input type="button" class="delete" value="Eliminar">
+            <input type="submit" class="add" value="Agregar Producto">
         </form>
     </div>
+
 
 </body>
 </html>

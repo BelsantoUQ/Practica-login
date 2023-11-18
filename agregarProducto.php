@@ -9,6 +9,8 @@ $productSummary = filter_input(INPUT_POST, 'productSummary');
 $unitValue = filter_input(INPUT_POST, 'unitValue');
 $productType = filter_input(INPUT_POST, 'productType');
 $quantity = filter_input(INPUT_POST, 'quantity');
+if ($productName !="" && $productSummary != "" && $unitValue && $productType !="" && $quantity !=""){
+
 
 // Agregar comillas simples a los valores de cadena en las consultas SQL
 $add = mysqli_query($conn, "INSERT INTO `producto` (`pnombre`, `ptipo`, `pcantidad`, `pprecio`, `pdescripcion`) VALUES ('$productName', '$productType', '$unitValue', '$productType', '$quantity')");
@@ -22,4 +24,7 @@ if (!$add) {
 echo "<script type=\"text/javascript\">alert('Se ha Registrado el producto'); window.location='productos.php';</script>";
 
 CloseCon($conn);
+}else{
+    echo "<script type=\"text/javascript\">alert('Debe llenar todos los datos'); window.location='productos.php';</script>";
+}
 ?>
