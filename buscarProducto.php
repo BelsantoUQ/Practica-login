@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset= "UTF-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Buscar Producto</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">INICIO</a>
+                </li>
+                <li>
+                    <a href="productos.php">PRODUCTOS</a>
+                </li>
+                <li class="close">
+                    <a href="cerrar.php">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+        <?php session_start(); ?>
+    </header>
 <?php
 include 'conexion.php';
 $conn = OpenCon();
@@ -5,7 +31,10 @@ $conn = OpenCon();
 $searchProductName = filter_input(INPUT_GET, 'nombre');
 
 // Realizar la consulta SQL para buscar el producto por nombre
-$query = "SELECT * FROM `producto` WHERE `pnombre` LIKE '%$searchProductName%'";
+$query = "SELECT `pcodigo`, `pnombre`, `tpnombre`, `pcantidad`, `pprecio`, `pdescripcion`, `tpnombre`
+FROM `producto`
+JOIN `tipoproducto` ON `ptipo` = `tpid`
+WHERE `pnombre` LIKE '%$searchProductName%'";
 $result = mysqli_query($conn, $query);
 
 // Verificar si se encontraron resultados
@@ -29,7 +58,7 @@ if ($result) {
                     <td>{$row['pnombre']}</td>
                     <td>{$row['pdescripcion']}</td>
                     <td>{$row['pprecio']}</td>
-                    <td>{$row['ptipo']}</td>
+                    <td>{$row['tpnombre']}</td>
                     <td>{$row['pcantidad']}</td>
                   </tr>";
         }
@@ -44,3 +73,5 @@ if ($result) {
 
 CloseCon($conn);
 ?>
+    </body>
+</html>

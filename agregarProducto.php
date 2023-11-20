@@ -13,7 +13,7 @@ if ($productName !="" && $productSummary != "" && $unitValue && $productType !="
 
 
 // Agregar comillas simples a los valores de cadena en las consultas SQL
-$add = mysqli_query($conn, "INSERT INTO `producto` (`pnombre`, `ptipo`, `pcantidad`, `pprecio`, `pdescripcion`) VALUES ('$productName', '$productType', '$unitValue', '$productType', '$quantity')");
+$add = mysqli_query($conn, "INSERT INTO `producto` (`pnombre`, `ptipo`, `pcantidad`, `pprecio`, `pdescripcion`) VALUES ('$productName', '$productType', '$quantity', '$unitValue', '$productSummary')");
 
 if (!$add) {
     $errorMessage = "Error en la consulta add: " . mysqli_error($conn);

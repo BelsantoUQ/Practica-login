@@ -1,8 +1,35 @@
 <?php
-include 'conexion.php';
-$conn = OpenCon();
-
-$searchProductName = filter_input(INPUT_GET, 'nombre');
+    include 'conexion.php';
+    $conn = OpenCon();
+    $searchProductName = filter_input(INPUT_GET, 'nombre');
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset= "UTF-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Editar <?php echo $searchProductName; ?></title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">INICIO</a>
+                </li>
+                <li>
+                    <a href="productos.php">PRODUCTOS</a>
+                </li>
+                <li class="close">
+                    <a href="cerrar.php">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+        <?php session_start(); ?>
+    </header>
+<?php
 
 // Realizar la consulta SQL para obtener los datos del producto por nombre
 $query = "SELECT * FROM `producto` WHERE `pnombre` = '$searchProductName'";
@@ -50,3 +77,5 @@ if ($result) {
 
 CloseCon($conn);
 ?>
+    </body>
+</html>
